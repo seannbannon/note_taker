@@ -1,7 +1,7 @@
-const path = require ('path');
+// const path = require ('path');
 
-function serveNotesHtml(req, res){
-    res.sendFile(path.join(__dirname, '../public/notes.html'))
-}
+// function serveNotesHtml(req, res){
+//     res.sendFile(path.join(__dirname, '../public/notes.html'))
+// }
 
-module.exports = serveNotesHtml
+// module.exports = serveNotesHtml

@@ -1,7 +1,32 @@
-const { Router } = require('express');
-const express = require('express');
-const router = express.Router();
-const serveNotesHtml = require ("../controller/htmlcontroller.js")
+// const { Router } = require('express');
+// const express = require('express');
+// const router = require('express').Router();
+// const path = require ('path');
+// const serveNotesHtml = require ("../controller/htmlcontroller.js")
 
-router.get("/notes", serveNotesHtml)
-module.exports = router
+// router.get("/notes", serveNotesHtml)
+// module.exports = router;
+
+
+
+
+
+// DEPENDENCIES: include the path package to get the correct file path for html
+const path = require("path");
+const router = require("express").Router();
+
+// ROUTING
+
+// HTML GET Request: Responds with the notes.html file
+router.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "../public/notes.html")));
+
+
+// HTML GET Request: Added for Heroku
+router.get("/", (req, res) => res.json(path.join(__dirname, "public/index.html")));
+
+
+// HTML GET Request: Responds with the index.html & all other file(s)
+router.get("*", (req, res) => res.sendFile(path.join(__dirname, "../public/index.html")));
+
+
+module.exports = router;
