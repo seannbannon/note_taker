@@ -1,16 +1,5 @@
-// const { Router } = require('express');
-// const express = require('express');
-// const router = require('express').Router();
-// const path = require ('path');
-// const serveNotesHtml = require ("../controller/htmlcontroller.js")
 
-// router.get("/notes", serveNotesHtml)
-// module.exports = router;
-
-
-
-
-
+  
 // DEPENDENCIES: include the path package to get the correct file path for html
 const path = require("path");
 const router = require("express").Router();
